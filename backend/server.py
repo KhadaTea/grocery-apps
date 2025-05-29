@@ -51,6 +51,13 @@ def get_all_orders():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+# @app.route('/getOrdersByDate', methods=['GET'])
+# def get_orders_by_date():
+#     search_date = request.args.get('date')
+#     response = order_dao.get_orders_by_date(connection, search_date)
+#     response = jsonify(response)
+#     response.headers.add('Access-Control-Allow-Origin', '*')
+#     return response
 
 @app.route('/insertProduct', methods=['POST'])
 def insert_product():
@@ -62,8 +69,6 @@ def insert_product():
         })
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
-
-
 
 @app.route('/updateProduct', methods=['POST'])
 def update_product():

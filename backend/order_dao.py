@@ -44,7 +44,22 @@ def get_all_orders(connection):
             'datetime': datetime
         })
     return response
+
+# def get_orders_by_date(connection, search_date):
+#     cursor = connection.cursor()
+#     query = ("SELECT * FROM orders WHERE DATE(datetime) = %s")
+#     cursor.execute(query, (search_date,))
     
+#     response = []
+#     for (order_id, custome_name, total, datetime) in cursor:
+#         response.append({
+#             'order_id': order_id,
+#             'customer_name': custome_name,
+#             'total': total,
+#             'datetime': datetime
+#         })
+#     return response
+
 def delete_order_details_by_product_id(connection, product_id):
     cursor = connection.cursor()
     query = ("DELETE FROM order_details WHERE product_id =" + str(product_id))
